@@ -25,24 +25,24 @@ fun main(args: Array<String>) {
     // DATA TYPES
     // Sizes
     // Double (8) > Float > Long > Integer > Short > Byte/Boolean
-    var a1:Boolean = true
-    var b1:Char = 'R'
-    var c1:Byte = 12
-    var d1:Short = -356
-    var e1:Int = 43567
-    var f1:Long = -999999L
-    var g1:Float = 5.111F
-    var h1:Double = 7.321
+    var a1: Boolean = true
+    var b1: Char = 'R'
+    var c1: Byte = 12
+    var d1: Short = -356
+    var e1: Int = 43567
+    var f1: Long = -999999L
+    var g1: Float = 5.111F
+    var h1: Double = 7.321
     println("$a1 $b1 $c1 $d1")
     println("$e1 $f1 $g1 $h1")
 
     // TYPE CASTING/CONVERSION
-    val a2:Byte = 127
+    val a2: Byte = 127
     val b2 = a2.toInt()
     val c2 = b2.toDouble()
     println("$a2 + $b2 = ${c2 * 2}")
 
-    val d2:Double = 999999.9
+    val d2: Double = 999999.9
     println(d2.toInt().toShort())
 
     // ARRAYS
@@ -55,7 +55,8 @@ fun main(args: Array<String>) {
     println(carArray.size)
     println(carArray.count())
 
-    var anyDataList = arrayOf(ageArray[0], ageArray[1], ageArray[2], carArray[0], carArray[1], carArray[2])
+    var anyDataList =
+        arrayOf(ageArray[0], ageArray[1], ageArray[2], carArray[0], carArray[1], carArray[2])
 //    anyDataList.set(6, true)
     println(anyDataList.joinToString())
 
@@ -68,6 +69,12 @@ fun main(args: Array<String>) {
     intDataArrayList.add("is fun!")
     println(intDataArrayList.size)
     println(intDataArrayList.joinToString())
+
+    // range.to() and in
+    val myCharRange = 'a'.rangeTo('k')
+    val charExists = 'k' in myCharRange
+    println("Range is: " + myCharRange.joinToString())
+    println("Range contains 'k': $charExists")
 
     // SET
     var setFake = arrayListOf<Any>("Brasil", "Russia", "Russia")
@@ -86,4 +93,38 @@ fun main(args: Array<String>) {
     map2Mutable.put("Koenigsegg", 2500000.0)
     println(map2Mutable.toList())
     println(map2Mutable.get("Koenigsegg"))
+
+    // OPERATORS and ASSIGNMENTS
+    var a3: Int = 20
+    var b3: Int = 15
+    var c3: Int = 0
+
+    c3 = a3 + b3
+    println("Sum +: $c3")
+    c3 +=a3
+    println("Sum +=: $c3")
+
+    c3 *= 10
+    println("Sum *= 10: $c3")
+    c3 /= b3
+    println("Sum /=: $c3")
+    c3 %= b3 // modulus operand = c3 = c3 % b3
+    println("Sum %= $b3: $c3")
+
+    // UNARY OPERATORS
+    var unaryNumber:Double = 7.6
+    var negativeNumber:Int = -1
+    var isUnaryCheck:Boolean = true
+
+    println("+number = " + +unaryNumber)
+    println("-number = " + -unaryNumber)
+    println("+negative = " + +negativeNumber.unaryPlus()) // FAIL
+    println("++number = " + ++unaryNumber)
+    println("--number = " + --unaryNumber)
+    println("!isCheck = " + !isUnaryCheck)
+    // Suffix and Prefix
+    println("number++ = " + unaryNumber++)
+    println("number = " + unaryNumber)
+    println("++number = " + ++unaryNumber)
+    println("number = " + unaryNumber)
 }
