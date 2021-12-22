@@ -21,7 +21,7 @@ fun main(args: Array<String>) {
     println("Sum (even): $sum02")
     println("")
 
-    // ARRAYS AND LOOPS
+    // ARRAYS AND FOR AND FOREACH
 //    val numberArray = arrayListOf<Int>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 //    for (a in numberArray) {
 //        println(a)
@@ -39,4 +39,21 @@ fun main(args: Array<String>) {
 
     val stringsArray = arrayListOf<String>("a", "b", "c", "d", "E")
     stringsArray.forEach { println(it) }
+
+    // WHILE
+    var ex = 50
+    while (ex < 55) {
+        println(ex)
+        ex++
+    }
+
+    // factorial e.g: 3 --> 3*2*1=6 | 5 --> 5*4*3*2*1=120
+    var k = 1
+    var fact = 1 // TODO: readLine()!!.toInt()
+    while (k <= 5) {
+        fact *= k // fact = fact * k
+        k++
+        println("$k! = $fact") // sout snippet
+    }
+    }
 }
