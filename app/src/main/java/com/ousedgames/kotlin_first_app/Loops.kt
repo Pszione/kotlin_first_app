@@ -1,5 +1,7 @@
 package com.ousedgames.kotlin_first_app
 
+import kotlin.random.Random
+
 fun main(args: Array<String>) {
 
     // FOR LOOPS
@@ -55,5 +57,31 @@ fun main(args: Array<String>) {
         k++
         println("$k! = $fact") // sout snippet
     }
+
+    // random guess
+    fun generateNewRand(): Int {
+        return Random.nextInt(0, 100)
+    }
+
+    var rnd: Int = generateNewRand()
+
+    while (true) {
+        println("Please enter a number: ")
+        val userGuess: Any = readLine()!!
+        if (userGuess.toString() == rnd.toString()) {
+            println("Congratulations! You know the number on my mind!")
+            rnd = generateNewRand()
+        }
+        /*else if(userGuess < rnd) {
+            println("Increase your guess...")
+        }*/
+        /*else if (userGuess > rnd) {
+            println("Decrease your guess...")
+        }*/
+        //
+        else if (userGuess is String && userGuess == "help") {
+            println("Answer: $rnd")
+        }
+//        break
     }
 }
